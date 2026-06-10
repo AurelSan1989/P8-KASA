@@ -1,0 +1,29 @@
+.headerBanner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 20px;
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.headerNav {
+    display: flex;
+    gap: 20px;
+}
+
+.headerLink {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.headerLink:hover {
+    text-decoration: none;
+}

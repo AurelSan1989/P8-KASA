@@ -1,0 +1,22 @@
+.header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  background-color: #FF6060;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.arrow {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+
+.content {
+  background-color: #f6f6f6;
+  padding: 20px;
+  border-radius: 5px;
+}
