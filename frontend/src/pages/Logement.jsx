@@ -1,10 +1,19 @@
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import Collapse from '../components/Collapse'
+import styles from "./Logement.module.css"
 
 export default function Logement() {
     const { id } = useParams()
     const [property, setProperty] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [currentImageIndex, setCurrentImageIndex] = useState(0)
+    const goToPrevious = () => {
+        setCurrentImageIndex((prev) => (prev === 0 ? property.pictures.length - 1 : prev - 1))
+    }
+    const goToNext = () => {
+        setCurrentImageIndex((prev) => (prev === property.pictures.length -1 ? 0 : prev + 1))
+    }
 
     useEffect(() => {
         fetch(`http://localhost:8080/api/properties`)
@@ -20,10 +29,39 @@ export default function Logement() {
     if (!property) return <p>Propriété non trouvée</p>
 
     return (
-        <div>
-            <h1>{property.title}</h1>
+        <section className={styles.LogementSection}>
             <img src={property.cover} alt={property.title} />
-            {/* On ajoutera plus de détails après */}
-        </div>
+            <div className={styles.LogementHeader}>
+                <div className={styles.TitleLocation}>
+                    <h1>{property.title}</h1>
+                    <p>{property.location}</p>
+                </div>
+                <div className={styles.Host}>
+                    <p>{property.host.name}</p>
+                    <img src={property.host.picture} />
+                </div>
+            </div>
+            <div className={styles.Tags}>
+                {property.tags.map((tag) => (
+                    <span>{tag}</span>
+                ))}
+            </div>
+            <div className={styles.CollapseContainer}>
+                <Collapse 
+                    titre="Description"
+                    contenu={property.description}
+                />
+                <Collapse 
+                    titre="Équipements"
+                    contenu={
+                        <ul>
+                            {property.equipments.map((eq, index) => (
+                                <li key={index}>{eq}</li>
+                            ))}
+                        </ul>
+                    }
+                />
+            </div>
+        </section>
     )
 }
