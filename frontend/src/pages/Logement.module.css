@@ -4,18 +4,10 @@
     padding: 0 20px 50px;
 }
 
-.LogementSection > img {
-    width: 100%;
-    height: 415px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
-
 .LogementHeader {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
     margin-bottom: 30px;
 }
 
@@ -24,7 +16,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 30px;
 }
 
 .TitleLocation h1 {
@@ -36,12 +27,12 @@
 .TitleLocation p {
     margin: 10px 0 0 0;
     font-size: 18px;
+    font-weight: 500;
     color: #000000;
 }
 
 .Host {
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 10px;
     text-align: right;
@@ -49,7 +40,9 @@
 
 .Host p {
     margin: 0;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FF6060;
 }
 
 .Host img {
@@ -59,11 +52,17 @@
     object-fit: cover;
 }
 
+.TagsRating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
 .Tags {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 30px;
 }
 
 .Tags span {

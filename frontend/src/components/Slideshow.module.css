@@ -1,0 +1,39 @@
+.LogementBanner {
+    position: relative;
+    height: 415px;
+    margin-bottom: 30px;
+}
+.arrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    max-height: 80px;
+    max-width: 47px;
+}
+
+.arrowPrevious {
+    left: 10px;
+}
+
+.arrowNext {
+    right: 10px;
+}
+
+.LogementBanner > img {
+    width: 100%;
+    height: 415px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.LogementBanner > span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    z-index: 2;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}

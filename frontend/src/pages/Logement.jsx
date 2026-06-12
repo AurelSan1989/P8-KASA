@@ -2,6 +2,9 @@ import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Collapse from '../components/Collapse'
 import styles from "./Logement.module.css"
+import starActive from "../assets/star-active.png"
+import starInactive from "../assets/star-inactive.png"
+import Slideshow from '../components/Slideshow'
 
 export default function Logement() {
     const { id } = useParams()
@@ -30,7 +33,7 @@ export default function Logement() {
 
     return (
         <section className={styles.LogementSection}>
-            <img src={property.cover} alt={property.title} />
+            <Slideshow pictures={property.pictures} title={property.title}/>
             <div className={styles.LogementHeader}>
                 <div className={styles.TitleLocation}>
                     <h1>{property.title}</h1>
@@ -39,13 +42,25 @@ export default function Logement() {
                 <div className={styles.Host}>
                     <p>{property.host.name}</p>
                     <img src={property.host.picture} />
+                </div> 
+            </div>
+            <div className={styles.TagsRating}>
+                <div className={styles.Tags}>
+                    {property.tags.map((tag, index) => (
+                        <span key={index}>{tag}</span>
+                    ))}
                 </div>
+                <div className={styles.Rating}>
+                    {Array.from({ length: 5}, (_, index) => (
+                        <span key={index}>{
+                            index + 1 <= parseInt(property.rating) ? 
+                            (<img src={starActive} />) : 
+                            (<img src={starInactive}/>)} 
+                        </span>
+                        ))}
+                    </div>        
             </div>
-            <div className={styles.Tags}>
-                {property.tags.map((tag) => (
-                    <span>{tag}</span>
-                ))}
-            </div>
+            
             <div className={styles.CollapseContainer}>
                 <Collapse 
                     titre="Description"
