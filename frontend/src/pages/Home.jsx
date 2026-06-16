@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
-import BannerHome from "../components/BannerHome"
+import Banner from "../components/Banner"
 import Card from "../components/Card"
 import styles from "../components/Card.module.css"
+import BannerHome from "../assets/BannerHome.jpg"
 
 export default function Home() {
   const [properties, setProperties] = useState([])
@@ -22,7 +23,9 @@ export default function Home() {
   }, [])
   return (
     <>
-      <BannerHome />
+      <Banner 
+        image={BannerHome} 
+        titre={(<h1>Chez vous, <br className={styles.mobileBreak}/>partout et ailleurs</h1>)}/>
       {loading ? (
         <p>Chargement</p>
       ) : (

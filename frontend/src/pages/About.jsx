@@ -1,5 +1,6 @@
 import Collapse from "../components/Collapse"
-import BannerAbout from "../components/BannerAbout"
+import BannerAbout from "../assets/BannerAbout.jpg"
+import Banner from "../components/Banner"
 import styles from "./About.module.css"
 
 export default function About() {
@@ -23,7 +24,10 @@ export default function About() {
   ]
   return (
     <>
-      <BannerAbout />
+      <Banner 
+        image={BannerAbout}
+        titre=""
+       />
       <div className={styles.collapsesContainer}>
         {collapses.map((collapse, index) => (
           <Collapse 
