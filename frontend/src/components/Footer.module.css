@@ -9,3 +9,29 @@
     height: 209px;
     color: white;
 }
+
+.footerText {
+    text-align: center;
+    font-size: 24px;
+}
+
+.footerMobileBreak {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .footerLogo {
+        width: 122px;
+        height: auto;
+    }
+
+    .footerText {
+        font-size: 12px;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .footerMobileBreak {
+        display: inline;
+    }
+}

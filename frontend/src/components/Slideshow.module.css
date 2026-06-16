@@ -22,9 +22,9 @@
 
 .LogementBanner > img {
     width: 100%;
-    height: 415px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 25px;
 }
 
 .LogementBanner > span {
@@ -36,4 +36,32 @@
     color: white;
     font-weight: 500;
     font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .LogementBanner {
+        height: 255px;
+        margin-bottom: 15px;
+    }
+
+    .LogementBanner > img {
+        border-radius: 10px;
+    }
+
+    .arrow {
+        max-height: 24px;
+        max-width: 15px;
+    }
+
+    .arrowPrevious {
+        left: 10px;
+    }
+
+    .arrowNext {
+        right: 10px;
+    }
+
+    .LogementBanner > span {
+        display: none;
+    }
 }

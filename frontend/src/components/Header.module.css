@@ -27,3 +27,20 @@
 .headerLink:hover {
     text-decoration: none;
 }
+
+@media (max-width: 768px) {
+    .headerBanner {
+        padding: 20px 15px;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .headerBanner img {
+        width: 145px;
+        height: auto;
+    }
+
+    .headerNav {
+        gap: 10px;
+    }
+}

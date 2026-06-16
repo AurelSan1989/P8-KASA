@@ -10,13 +10,6 @@ export default function Logement() {
     const { id } = useParams()
     const [property, setProperty] = useState(null)
     const [loading, setLoading] = useState(true)
-    const [currentImageIndex, setCurrentImageIndex] = useState(0)
-    const goToPrevious = () => {
-        setCurrentImageIndex((prev) => (prev === 0 ? property.pictures.length - 1 : prev - 1))
-    }
-    const goToNext = () => {
-        setCurrentImageIndex((prev) => (prev === property.pictures.length -1 ? 0 : prev + 1))
-    }
 
     useEffect(() => {
         fetch(`http://localhost:8080/api/properties`)
@@ -26,6 +19,10 @@ export default function Logement() {
                 setProperty(found)
                 setLoading(false)
             })
+            .catch(err => {
+                setLoading(false)
+                console.error(err)
+            })
     }, [id])
 
     if (loading) return <p>Chargement...</p>
@@ -34,33 +31,35 @@ export default function Logement() {
     return (
         <section className={styles.LogementSection}>
             <Slideshow pictures={property.pictures} title={property.title}/>
-            <div className={styles.LogementHeader}>
-                <div className={styles.TitleLocation}>
-                    <h1>{property.title}</h1>
-                    <p>{property.location}</p>
-                </div>
-                <div className={styles.Host}>
-                    <p>{property.host.name}</p>
-                    <img src={property.host.picture} />
-                </div> 
-            </div>
-            <div className={styles.TagsRating}>
-                <div className={styles.Tags}>
-                    {property.tags.map((tag, index) => (
-                        <span key={index}>{tag}</span>
-                    ))}
-                </div>
-                <div className={styles.Rating}>
-                    {Array.from({ length: 5}, (_, index) => (
-                        <span key={index}>{
-                            index + 1 <= parseInt(property.rating) ? 
-                            (<img src={starActive} />) : 
-                            (<img src={starInactive}/>)} 
-                        </span>
+            <div className={styles.LogementHeader}>    
+                <div className={styles.InfoBlock}>
+                    <div className={styles.TitleLocation}>
+                        <h1>{property.title}</h1>
+                        <p>{property.location}</p>
+                    </div>
+                    <div className={styles.Tags}>
+                        {property.tags.map((tag, index) => (
+                            <span key={index}>{tag}</span>
+                        ))}
+                    </div>
+                </div>   
+                <div className={styles.IdentityBlock}>
+                    <div className={styles.Host}>
+                        <p>{property.host.name}</p>
+                        <img src={property.host.picture} alt={property.host.name} />
+                    </div> 
+                    <div className={styles.Rating}>
+                        {Array.from({ length: 5}, (_, index) => (
+                            <span key={index}>
+                                {index + 1 <= parseInt(property.rating) ? 
+                                    <img src={starActive} alt="étoile active" /> : 
+                                    <img src={starInactive} alt="étoile inactive" />
+                                } 
+                            </span>
                         ))}
                     </div>        
-            </div>
-            
+                </div>
+            </div>            
             <div className={styles.CollapseContainer}>
                 <Collapse 
                     titre="Description"

@@ -1,7 +1,8 @@
 .Banner {
     position: relative;
     height: 220px;
-    width: 1240px;
+    width: 100%;
+    max-width: 1240px;
     overflow: hidden;
     border-radius: 25px;
 }
@@ -34,4 +35,29 @@
     font-weight: 700;
     font-size: 48px;
     z-index: 2;
+}
+
+.mobileBreak {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .Banner {
+        height: 111px;
+        border-radius: 10px;
+    }
+
+    .Banner h1 {
+        font-size: 24px;
+        text-align: left;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: auto;
+        padding: 0;
+    }
+
+    .mobileBreak {
+        display: inline;
+    }
 }

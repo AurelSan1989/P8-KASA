@@ -1,7 +1,8 @@
 .Banner {
     position: relative;
     height: 220px;
-    width: 1240px;
+    max-width: 1240px;
+    width: 100%;
     overflow: hidden;
     border-radius: 25px;
 }
@@ -21,4 +22,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .Banner {
+        height: 111px;
+        border-radius: 10px;
+    }
 }

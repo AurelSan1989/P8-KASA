@@ -7,15 +7,15 @@
 .LogementHeader {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: flex-start;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 
-.TitleLocation {
+.InfoBlock {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    gap: 20px;
 }
 
 .TitleLocation h1 {
@@ -25,10 +25,33 @@
 }
 
 .TitleLocation p {
-    margin: 10px 0 0 0;
+    margin: 5px 0 0 0;
     font-size: 18px;
     font-weight: 500;
     color: #000000;
+}
+
+.Tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.Tags span {
+    background-color: #FF6060;
+    color: white;
+    padding: 4px 22px;
+    border-radius: 20px;
+    font-size: 14px;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+.IdentityBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    gap: 20px;
 }
 
 .Host {
@@ -43,41 +66,30 @@
     font-size: 18px;
     font-weight: 500;
     color: #FF6060;
+    white-space: pre-line;
 }
 
 .Host img {
-    width: 50px;
-    height: 50px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.TagsRating {
+.Rating {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
+    gap: 5px;
 }
 
-.Tags {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.Tags span {
-    background-color: #FF6060;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 14px;
-    white-space: nowrap;
-    font-weight: 700;
+.Rating img {
+    width: 24px;
+    height: 24px;
 }
 
 .CollapseContainer {
     display: flex;
-    gap: 50px;
+    gap: 76px;
+    margin-top: 24px;
 }
 
 .CollapseContainer > * {
@@ -86,9 +98,73 @@
 
 .CollapseContainer ul {
     margin: 0;
-    padding-left: 20px;
+    padding: 0;
+    list-style-type: none;
 }
 
 .CollapseContainer li {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+.CollapseContainer li:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .LogementHeader {
+        flex-direction: column;
+        gap: 16px;
+        margin: 15px 0;
+    }
+
+    .InfoBlock {
+        gap: 10px;
+        width: 100%;
+    }
+
+    .TitleLocation h1 {
+        font-size: 18px;
+    }
+
+    .TitleLocation p {
+        font-size: 14px;
+    }
+
+    .Tags span {
+        font-size: 10px;
+        padding: 3px 15px;
+        border-radius: 5px;
+    }
+
+    .IdentityBlock {
+        flex-direction: row-reverse;   
+        justify-content: space-between; 
+        align-items: center;
+        width: 100%;     
+        gap: 0;
+    }
+
+    .Host p {
+        font-size: 12px;
+    }
+
+    .Host img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .Rating img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .CollapseContainer {
+        flex-direction: column; 
+        gap: 16px;
+        margin-top: 15px; 
+    }
+    
+    .CollapseContainer ul {
+        padding-left: 0; 
+    }
 }

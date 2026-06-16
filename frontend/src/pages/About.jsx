@@ -2,7 +2,7 @@ import Collapse from "../components/Collapse"
 import BannerAbout from "../components/BannerAbout"
 import styles from "./About.module.css"
 
-export default function Home() {
+export default function About() {
   const collapses = [
     {
       titre: "Fiabilité",
