@@ -24,14 +24,11 @@ export default function About() {
   ]
   return (
     <>
-      <Banner 
-        image={BannerAbout}
-        titre=""
-       />
+      <Banner image={BannerAbout} />
       <div className={styles.collapsesContainer}>
-        {collapses.map((collapse, index) => (
+        {collapses.map((collapse) => (
           <Collapse 
-            key={index}
+            key={collapse.titre}
             titre={collapse.titre}
             contenu={collapse.contenu}
           />

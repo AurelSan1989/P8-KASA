@@ -37,10 +37,6 @@
     z-index: 2;
 }
 
-.mobileBreak {
-    display: none;
-}
-
 @media (max-width: 768px) {
     .Banner {
         height: 111px;
@@ -57,7 +53,7 @@
         padding: 0;
     }
 
-    .mobileBreak {
-        display: inline;
+    .Banner span {
+        display: block;
     }
 }

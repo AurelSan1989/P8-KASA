@@ -19,8 +19,18 @@ export default function Slideshow( {pictures, title} ) {
                         <img src={pictures[currentImageIndex]} alt={title} />
                         {pictures.length > 1 && 
                             <> 
-                                <img src={next} onClick={goToNext} className={`${styles.arrow} ${styles.arrowNext}`}/> 
-                                <img src={previous} onClick={goToPrevious} className={`${styles.arrow} ${styles.arrowPrevious}`}/> 
+                                <img 
+                                    src={next} 
+                                    onClick={goToNext} 
+                                    className={`${styles.arrow} ${styles.arrowNext}`}
+                                    alt='Image suivante'
+                                /> 
+                                <img 
+                                    src={previous} 
+                                    onClick={goToPrevious} 
+                                    className={`${styles.arrow} ${styles.arrowPrevious}`}
+                                    alt='Image précédente'
+                                /> 
                                 <span>{currentImageIndex + 1} / {pictures.length}</span> 
                             </>
                         }           

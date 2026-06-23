@@ -31,7 +31,7 @@
         line-height: 1.4;
     }
 
-    .footerMobileBreak {
-        display: inline;
+    .footerText span {
+        display: block;
     }
 }

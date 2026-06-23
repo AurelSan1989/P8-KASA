@@ -9,13 +9,15 @@ export default function Header() {
             <nav className={styles.headerNav}>
                 <NavLink 
                 to="/" 
-                className={({ isActive }) => isActive ? `${styles.headerLink} ${styles.active}` : styles.headerLink}
+                className={({ isActive }) => 
+                    isActive ? `${styles.headerLink} ${styles.active}` : styles.headerLink}
                 >
                 Accueil
                 </NavLink>
                 <NavLink 
                 to="/about" 
-                className={({ isActive }) => isActive ? `${styles.headerLink} ${styles.active}` : styles.headerLink}
+                className={({ isActive }) => 
+                    isActive ? `${styles.headerLink} ${styles.active}` : styles.headerLink}
                 >
                 A propos
                 </NavLink>

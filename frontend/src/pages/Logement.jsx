@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Collapse from '../components/Collapse'
 import styles from "./Logement.module.css"
@@ -10,6 +10,7 @@ export default function Logement() {
     const { id } = useParams()
     const [property, setProperty] = useState(null)
     const [loading, setLoading] = useState(true)
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetch(`http://localhost:8080/api/properties`)
@@ -21,12 +22,15 @@ export default function Logement() {
             })
             .catch(err => {
                 setLoading(false)
-                console.error(err)
+                console.error(err)                
             })
     }, [id])
 
     if (loading) return <p>Chargement...</p>
-    if (!property) return <p>Propriété non trouvée</p>
+    if (!property) {
+        navigate('/404')
+        return null
+    }
 
     return (
         <section className={styles.LogementSection}>

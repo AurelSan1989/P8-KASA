@@ -25,7 +25,7 @@ export default function Home() {
     <>
       <Banner 
         image={BannerHome} 
-        titre={(<h1>Chez vous, <br className={styles.mobileBreak}/>partout et ailleurs</h1>)}/>
+        titre={<>Chez vous, <span>partout et ailleurs</span></>} />
       {loading ? (
         <p>Chargement</p>
       ) : (
