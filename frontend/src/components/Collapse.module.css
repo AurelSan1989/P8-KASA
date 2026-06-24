@@ -44,7 +44,7 @@
 }
 
 .contentOpen {
-  max-height: 500px;
+  max-height: 800px;
 }
 
 .contentOpen > * {
@@ -75,7 +75,6 @@
   }
 
   .content {
-    padding: 15px 12px;
     font-size: 12px;
   }
 }
