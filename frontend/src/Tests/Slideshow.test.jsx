@@ -44,7 +44,7 @@ describe('Slideshow', () => {
             fireEvent.click(prevArrow);
             expect(img).toHaveAttribute('src', 'photo3.jpg');
     })
-    test("Pas de flèches, ni de span si une seule image", () => {
+    test("Pas de flèches si une seule image", () => {
         render(
             <Slideshow 
                 pictures={ [ "photo1.jpg" ] }
@@ -53,10 +53,8 @@ describe('Slideshow', () => {
         )
         const next = screen.queryByAltText("Image suivante");
         const previous = screen.queryByAltText("Image précédente")
-        const infoPicture = screen.queryByText("1 / 1")
         expect(next).not.toBeInTheDocument()
         expect(previous).not.toBeInTheDocument()
-        expect(infoPicture).not.toBeInTheDocument()
     })
     test("Rebouclage vers la première image", () => {
         render(

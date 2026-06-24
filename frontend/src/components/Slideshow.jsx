@@ -31,9 +31,9 @@ export default function Slideshow( {pictures, title} ) {
                                     className={`${styles.arrow} ${styles.arrowPrevious}`}
                                     alt='Image précédente'
                                 /> 
-                                <span>{currentImageIndex + 1} / {pictures.length}</span> 
                             </>
-                        }           
+                        } 
+                        <span>{currentImageIndex + 1} / {pictures.length}</span>           
                     </div>
     )
 }
