@@ -15,6 +15,6 @@ describe("Collapse", () => {
         const title = screen.getByText("titreTest");
         fireEvent.click(title);
         const contenu = screen.getByText("contenuTest");
-        expect(contenu).toBeInTheDocument()
+        expect(contenu).not.toHaveClass(styles.contentClose)
     })
 })
