@@ -7,7 +7,7 @@ import styles from "../components/Collapse.module.css"
 describe("Collapse", () => {
     test("Collapse fermée", () => {
         render(<Collapse titre={"titreTest"} contenu={"contenuTest"}/>);
-        const contenu = screen.queryByText("contenuTest");
+        const contenu = screen.getByText("contenuTest");
         expect(contenu).toHaveClass(styles.contentClose);
     })
     test("Collapse ouverte", () => {
